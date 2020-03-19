@@ -3,7 +3,7 @@ resource "aws_vpc" "main" {
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name = var.vpc_name
+    Name = "${var.stack_name}-main"
   }
 }
 
@@ -12,7 +12,7 @@ resource "aws_subnet" "app_subnet_a" {
   cidr_block = var.app_subnet_a_cidr
 
   tags = {
-    Name = var.app_subnet_a_name
+    Name = "${var.stack_name}-app-subnet-a"
   }
 }
 
@@ -21,6 +21,6 @@ resource "aws_subnet" "app_subnet_b" {
   cidr_block = var.app_subnet_b_cidr
 
   tags = {
-    Name = var.app_subnet_b_name
+    Name = "${var.stack_name}-app-subnet-b"
   }
 }

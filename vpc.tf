@@ -24,3 +24,39 @@ resource "aws_subnet" "app_subnet_b" {
     Name = "${var.stack_name}-app-subnet-b"
   }
 }
+
+resource "aws_subnet" "db_subnet_a" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.db_subnet_a_cidr
+
+  tags = {
+    Name = "${var.stack_name}-db-subnet-a"
+  }
+}
+
+resource "aws_subnet" "db_subnet_b" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.db_subnet_b_cidr
+
+  tags = {
+    Name = "${var.stack_name}-db-subnet-b"
+  }
+}
+
+resource "aws_subnet" "web_subnet_a" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.web_subnet_a_cidr
+
+  tags = {
+    Name = "${var.stack_name}-web-subnet-a"
+  }
+}
+
+resource "aws_subnet" "web_subnet_b" {
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.web_subnet_b_cidr
+
+  tags = {
+    Name = "${var.stack_name}-web-subnet-b"
+  }
+}

@@ -9,3 +9,19 @@ output "app_subnet_a_id" {
 output "app_subnet_b_id" {
   value = aws_subnet.app_subnet_b.id
 }
+
+output "db_subnet_a_id" {
+  value = aws_subnet.db_subnet_a.id
+}
+
+output "db_subnet_b_id" {
+  value = aws_subnet.db_subnet_b.id
+}
+
+output "web_subnet_a_id" {
+  value = aws_subnet.web_subnet_a.id
+}
+
+output "web_subnet_b_id" {
+  value = aws_subnet.web_subnet_b.id
+}

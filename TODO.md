@@ -2,7 +2,9 @@
 
 TODO list for the aws-vpc project.
 
-## Task list
+## PENDING
+
+## WIP
 
 - [ ] Add internet gateway supporing general outbound, web inbound, and aws services connectivity.
 

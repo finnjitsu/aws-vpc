@@ -75,9 +75,24 @@ resource "aws_subnet" "web_subnet_b" {
 *                                                                             *
 ******************************************************************************/
 
-resource "aws_internet_gateway" "gw" {
+resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
+  tags = {
+    Name = "${var.stack_name}-main"
+  }
+}
+
+resource "aws_route_table" "web" {
+  vpc_id = aws_vpc.main.id
+  route {
+    cidr_block = var.web_subnet_a_cidr
+    gateway_id = aws_internet_gateway.main.id
+  }
+  route {
+    cidr_block = var.web_subnet_b_cidr
+    gateway_id = aws_internet_gateway.main.id
+  }
   tags = {
     Name = "${var.stack_name}-main"
   }
